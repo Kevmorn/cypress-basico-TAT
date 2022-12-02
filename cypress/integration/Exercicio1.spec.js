@@ -64,8 +64,11 @@ describe('Central de Atendimento ao Cliente TAT', function() {
             .should('have.value', 'Teste')
             .clear()
             .should('have.value', '')
-
+        });
+        it.only('Envia o Relatorio com sucesso  usando comando costumizado', function() {
+            cy.filMandatoryFieldsAndSubmit()
+            cy.get('.success > strong')
+            .should('be.visible')
         });
 
-
-    })
+        });
